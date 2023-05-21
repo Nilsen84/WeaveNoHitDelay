@@ -1,6 +1,6 @@
-package io.github.nilsen84.nohitdelay.hooks;
+package io.github.nilsen84.nohitdelay;
 
-import club.maxstats.weave.loader.api.Hook;
+import net.weavemc.loader.api.Hook;
 import org.jetbrains.annotations.NotNull;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
@@ -12,8 +12,8 @@ public class MinecraftHook extends Hook {
     }
 
     @Override
-    public void transform(@NotNull ClassNode classNode, @NotNull AssemblerConfig assemblerConfig) {
-        classNode.methods.stream()
+    public void transform(@NotNull ClassNode node, @NotNull AssemblerConfig cfg) {
+        node.methods.stream()
                 .filter(m -> m.name.equals("clickMouse"))
                 .findFirst().orElseThrow()
                 .instructions.forEach(i -> {

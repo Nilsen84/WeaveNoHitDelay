@@ -1,8 +1,6 @@
 {
-  "entrypoints": [
-    "io.github.nilsen84.nohitdelay.NoHitDelay"
-  ],
+  "entrypoints": [],
   "hooks": [
-    "io.github.nilsen84.nohitdelay.hooks.MinecraftHook"
+    "io.github.nilsen84.nohitdelay.MinecraftHook"
   ]
 }
